@@ -1,0 +1,4 @@
+theme: jekyll-theme-cayman
+title: Physics Informed Deep Learning
+description: Data-driven solutions and discovery of Nonlinear Partial Differential Equations
+show_downloads: true
