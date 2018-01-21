@@ -151,3 +151,12 @@ We have presented a [machine learning approach](https://arxiv.org/abs/1801.01236
 
 This work received support by the DARPA EQUiPS grant N66001-15-2-4055 and the AFOSR grant FA9550-17-1-0013. All data and codes are publicly available on [GitHub](https://github.com/maziarraissi/MultistepNNs).
 
+* * * * *
+
+	@article{raissi2018multistep,
+	  title={Multistep Neural Networks for Data-driven Discovery of Nonlinear Dynamical Systems},
+	  author={Raissi, Maziar and Perdikaris, Paris and Karniadakis, George Em},
+	  journal={arXiv preprint arXiv:1801.01236},
+	  year={2018}
+	}
+
