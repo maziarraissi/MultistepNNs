@@ -2,7 +2,7 @@
 layout: default
 ---
 ### Authors
-[Maziar Raissi](http://www.dam.brown.edu/people/mraissi/), [Paris Perdikaris](https://www.seas.upenn.edu/directory/profile.php?ID=237), and [George Em Karniadakis](https://www.brown.edu/research/projects/crunch/george-karniadakis)
+[Maziar Raissi](https://maziarraissi.github.io/), [Paris Perdikaris](https://www.seas.upenn.edu/directory/profile.php?ID=237), and [George Em Karniadakis](https://www.brown.edu/research/projects/crunch/george-karniadakis)
 
 ### Abstract
 
@@ -58,7 +58,7 @@ $$
 
 We use $$[x_0\ y_0]^T = [2\ 0]^T$$ as initial condition and collect data from $$t = 0$$ to $$t = 25$$ with a time-step size of $$\Delta t = 0.01$$. The data are plotted in the following figure. We employ a neural network with one hidden layer and 256 neurons to represent the nonlinear dynamics. As for the multistep scheme, we use Adams-Moulton with $$M=1$$ steps (i.e., the trapezoidal rule). Upon training the neural network, we solve the identified system using the same initial condition as the one above. The following figure provides a qualitative assessment of the accuracy in identifying the correct nonlinear dynamics. Specifically, by comparing the exact and predicted trajectories of the system, as well as the resulting phase portraits, we observe that the algorithm can correctly capture the dynamic evolution of the system.
 
-![](http://www.dam.brown.edu/people/mraissi/assets/img/Cubic2D.png)
+![](https://maziarraissi.github.io/assets/img/Cubic2D.png)
 > _Harmonic Oscillator:_ Trajectories of the two-dimensional damped harmonic oscillator with cubic dynamics are depicted in the left panel while the corresponding phase portrait is plotted in the right panel. Solid colored lines represent the exact dynamics while the dashed black lines demonstrate the learned dynamics. The identified system correctly captures the form of the dynamics and accurately reproduces the phase portrait.
 
 **Lorenz system**
@@ -73,21 +73,21 @@ $$
 \end{array}
 $$
 
-We use $$[x_0\ y_0\ z_0]^T = [-8\ 7\ 27]^T$$ as initial condition and collect data from $$t = 0$$ to $$t = 25$$ with a time-step size of $$\Delta t = 0.01$$. The data are plotted in the following figure. We employ a neural network with one hidden layer and 256 neurons to represent the nonlinear dynamics. As for the multistep scheme, we use Adams-Moulton with $$M=1$$ steps (i.e., the trapezoidal rule). Upon training the neural network, we solve the identified system using the same initial condition as the one above. As depicted in the following figure, the learned system correctly captures the form of the attractor. The Lorenz system has a positive Lyapunov exponent, and small differences between the exact and learned models grow exponentially, even though the attractor remains intact. 
+We use $$[x_0\ y_0\ z_0]^T = [-8\ 7\ 27]^T$$ as initial condition and collect data from $$t = 0$$ to $$t = 25$$ with a time-step size of $$\Delta t = 0.01$$. The data are plotted in the following figure. We employ a neural network with one hidden layer and 256 neurons to represent the nonlinear dynamics. As for the multistep scheme, we use Adams-Moulton with $$M=1$$ steps (i.e., the trapezoidal rule). Upon training the neural network, we solve the identified system using the same initial condition as the one above. As depicted in the following figure, the learned system correctly captures the form of the attractor. The Lorenz system has a positive Lyapunov exponent, and small differences between the exact and learned models grow exponentially, even though the attractor remains intact.
 
-![](http://www.dam.brown.edu/people/mraissi/assets/img/Lorenz.png)
+![](https://maziarraissi.github.io/assets/img/Lorenz.png)
 > _Lorenz System:_ The exact phase portrait of the Lorenz system (left panel) is compared to the corresponding phase portrait of the learned dynamics (right panel).
 
 **Fluid flow behind a cylinder**
 
 In this example we collect data for the fluid flow past a cylinder at Reynolds number 100 using direct numerical simulations of the two dimensional Navier-Stokes equations (see the following figure).
 
-![](http://www.dam.brown.edu/people/mraissi/assets/img/Cylinder_vorticity.png)
+![](https://maziarraissi.github.io/assets/img/Cylinder_vorticity.png)
 > _Flow past a cylinder:_ A snapshot of the vorticity field of a solution to the Navier-Stokes equations for the fluid flow past a cylinder.
 
 In particular, we simulate the Navier-Stokes equations describing the two-dimensional fluid flow past a circular cylinder at Reynolds number 100 using the [Immersed Boundary Projection Method](https://github.com/cwrowley/ibpm). This approach utilizes a multi-domain scheme with four nested domains, each successive grid being twice as large as the previous one. Length and time are non-dimensionalized so that the cylinder has unit diameter and the flow has unit velocity. Data is collected on the finest domain with dimensions $$9 \times 4$$ at a grid resolution of $$449 \times 199$$. The flow solver uses a 3rd-order [Runge-Kutta](https://en.wikipedia.org/wiki/Runge–Kutta_methods) integration scheme with a time step of $$t = 0.02$$, which has been verified to yield well-resolved and converged flow fields. After simulations converge to steady periodic [vortex shedding](https://en.wikipedia.org/wiki/Vortex_shedding), flow snapshots are saved every $$\Delta t = 0.02$$. We then reduce the dimension of the system by [proper orthogonal decomposition](https://en.wikipedia.org/wiki/Principal_component_analysis) (POD). The POD results in a hierarchy of orthonormal modes that, when truncated, capture most of the energy of the original system for the given rank truncation. The first two most energetic POD modes capture a significant portion of the energy; the steady-state vortex shedding is a [limit cycle](https://en.wikipedia.org/wiki/Limit_cycle) in these coordinates. An additional mode, called the shift mode, is included to capture the transient dynamics connecting the unstable steady state with the mean of the limit cycle. The resulting POD coefficients are depicted in the following figure.
 
-![](http://www.dam.brown.edu/people/mraissi/assets/img/Cylinder.png)
+![](https://maziarraissi.github.io/assets/img/Cylinder.png)
 > _Flow past a cylinder:_ The exact phase portrait of the cylinder wake trajectory in reduced coordinates (left panel) is compared to the corresponding phase portrait of the learned dynamics (right panel).
 
 We employ a neural network with one hidden layer and $$256$$ neurons to represent the nonlinear dynamics shown in the above figure. As for the linear multistep scheme, we use Adams-Moulton with $$M=1$$ steps (i.e., the trapezoidal rule). Upon training the neural network, we solve the identified system. As depicted in the above figure, the learned system correctly captures the form of the dynamics and accurately reproduces the phase portrait, including both the transient regime as well as the limit cycle attained once the flow dynamics converge to the well known Karman vortex street.
@@ -115,7 +115,7 @@ $$
 
 We collect data from the Hopf system for various initial conditions corresponding to different parameter values for $$\mu$$. The data is depicted in the following figure. The identified parameterized dynamics is shown in the following figure for a set of parameter values different from the ones used during model training. The learned system correctly captures the transition from the fixed point for $$\mu < 0$$ to the limit cycle for $$\mu>0$$.
 
-![](http://www.dam.brown.edu/people/mraissi/assets/img/Hopf.png)
+![](https://maziarraissi.github.io/assets/img/Hopf.png)
 > _Hopf bifurcation:_ Training data from the Hopf system for various initial conditions corresponding to different parameter values (left panel) is compared to the corresponding phase portrait of the learned dynamics (right panel). It is worth highlighting that the algorithm is tested on initial conditions different from the ones used during training.
 
 **Glycolytic oscillator**
@@ -136,7 +136,7 @@ $$
 
 As shown in the following figure, data from a simulation of this equation are collected from $$t = 0$$ to $$t = 10$$ with a time-step size of $$\Delta t = 0.01$$. We employ a neural network with one hidden layer and $$256$$ neurons to represent the nonlinear dynamics. As for the multi-step scheme, we use Adams-Moulton with $$M=1$$ steps (i.e., the trapezoidal rule). Upon training the neural network, we solve the identified system using the same initial condition as the ones used for the exact system. As depicted in the following figure, the learned system correctly captures the form of the dynamics.
 
-![](http://www.dam.brown.edu/people/mraissi/assets/img/Glycolytic.png)
+![](https://maziarraissi.github.io/assets/img/Glycolytic.png)
 > _Glycolytic oscillator:_ Exact versus learned dynamics for random initial conditions.
 
 * * * * *
@@ -160,4 +160,3 @@ This work received support by the DARPA EQUiPS grant N66001-15-2-4055 and the AF
 	  journal={arXiv preprint arXiv:1801.01236},
 	  year={2018}
 	}
-
